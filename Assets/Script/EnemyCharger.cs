@@ -11,17 +11,17 @@ public class EnemyCharger : EnemyBase
 
     public override void Move()
     {
-        // Siempre moverse hacia adelante global (como Shooter o MiniBoss)
+        
         float moveSpeed = speed * (charging ? chargeMultiplier : normalSpeedMultiplier);
         transform.Translate(Vector3.back * moveSpeed * Time.deltaTime, Space.World);
-        // Usa Vector3.back si el jugador avanza hacia Z+ (escenario de scroll)
+        
     }
 
     public override void Attack()
     {
         if (target == null) return;
 
-        // Cuando está lo bastante cerca, activa el modo "charge"
+        
         float distance = Vector3.Distance(transform.position, target.position);
 
         if (distance < chargeDistance)
@@ -44,7 +44,7 @@ public class EnemyCharger : EnemyBase
                 player.TakeDamage(collisionDamage);
             }
 
-            // Destruir inmediatamente
+            
             Destroy(gameObject);
         }
     }
@@ -59,7 +59,7 @@ public class EnemyCharger : EnemyBase
                 player.TakeDamage(collisionDamage);
             }
 
-            // Destruir inmediatamente
+           
             Destroy(gameObject);
         }
     }
