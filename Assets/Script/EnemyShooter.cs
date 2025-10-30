@@ -11,6 +11,7 @@ public class EnemyShooter : EnemyBase
         transform.Translate(Vector3.back * speed * Time.deltaTime);
     }
 
+
     public override void Attack()
     {
         fireTimer += Time.deltaTime;
