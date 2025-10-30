@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI endText;
 
     private float timer;
-    private float survivalTime = 300f; // 5 minutos = 300 segundos
+    private float survivalTime = 300f; 
     private bool gameEnded = false;
 
     void Awake()
@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
         {
             instance = this;
         }
-        // Asegurarse que endText esté apagado al inicio
+       
         if (endText != null)
         {
             endText.gameObject.SetActive(false);
@@ -34,12 +34,12 @@ public class UIManager : MonoBehaviour
             timer += Time.deltaTime;
             timerText.text = "Time: " + timer.ToString("F1");
 
-            // Verificar si llegó a 5 minutos (300 segundos)
+           
             if (timer >= survivalTime)
             {
                 gameEnded = true;
                 ShowEndMessage("¡VICTORIA! Sobreviviste 5 minutos");
-                Time.timeScale = 0; // Pausar el juego
+                Time.timeScale = 0; 
             }
         }
     }
@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
         if (endText != null)
         {
             endText.text = message;
-            endText.gameObject.SetActive(true); // Activar el texto
+            endText.gameObject.SetActive(true); 
         }
         gameEnded = true;
     }
