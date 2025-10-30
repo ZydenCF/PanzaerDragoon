@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     private float speed = 25.0f;
     private bool fromPlayer;
     private Vector3 startPosition;
-    private float maxDistance = 50f; // Límite de distancia
+    private float maxDistance = 50f; 
 
     public void Initialize(Vector3 dir, int dmg, bool playerOwned)
     {
@@ -21,7 +21,6 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
-        // Destruir si supera la distancia máxima
         if (Vector3.Distance(startPosition, transform.position) > maxDistance)
         {
             Destroy(gameObject);
