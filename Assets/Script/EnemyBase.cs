@@ -6,6 +6,7 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     protected float speed;
     protected Transform target;
 
+
     protected virtual void Start()
     {
         health = 50;
