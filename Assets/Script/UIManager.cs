@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI endText;
 
     private float timer;
-    private float survivalTime = 300f; 
+    private float survivalTime = 180f; 
     private bool gameEnded = false;
 
     void Awake()
