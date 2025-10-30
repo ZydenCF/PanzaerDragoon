@@ -15,7 +15,7 @@ public class MiniBoss : EnemyBase
 
     public override void Move()
     {
-        // Avanzar hacia adelante automáticamente
+        
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
@@ -26,14 +26,14 @@ public class MiniBoss : EnemyBase
         {
             fireTimer = 0.0f;
 
-            // Disparar 3 proyectiles en abanico hacia el jugador
+            
             for (int i = -1; i <= 1; i++)
             {
                 GameObject newProjectile = Instantiate(projectilePrefab,
                     transform.position, Quaternion.identity);
                 Projectile projectile = newProjectile.GetComponent<Projectile>();
 
-                // Calcular dirección hacia el jugador con variación
+                
                 if (target != null)
                 {
                     Vector3 directionToPlayer = (target.position - transform.position).normalized;
