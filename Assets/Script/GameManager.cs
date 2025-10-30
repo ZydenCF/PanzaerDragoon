@@ -44,9 +44,9 @@ public class GameManager : MonoBehaviour
         {
             OnPlayerDead();
         }
-        // Mostrar mensaje de derrota
+        
         UIManager.Instance.ShowEndMessage("GAME OVER - Has muerto");
-        Time.timeScale = 0; // Pausar el juego
+        Time.timeScale = 0; 
     }
 
     public void OnBossDefeatedEvent()
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         {
             OnBossDefeated();
         }
-        // Mostrar mensaje de boss derrotado
+        
         UIManager.Instance.ShowEndMessage("¡BOSS DERROTADO! Increíble");
     }
 
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         {
             OnTimeFinished();
         }
-        // Mostrar mensaje de tiempo acabado
+       
         UIManager.Instance.ShowEndMessage("TIEMPO AGOTADO");
     }
 }
