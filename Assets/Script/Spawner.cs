@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour
         spawnPos.x += Random.Range(-10f, 10f);
         spawnPos.y += Random.Range(-2f, 2f);
 
+
         int index = Random.Range(0, enemyPrefabs.Length);
         Instantiate(enemyPrefabs[index], spawnPos, Quaternion.identity);
     }
