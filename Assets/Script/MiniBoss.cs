@@ -15,7 +15,7 @@ public class MiniBoss : EnemyBase
 
     public override void Move()
     {
-        
+
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
@@ -26,17 +26,17 @@ public class MiniBoss : EnemyBase
         {
             fireTimer = 0.0f;
 
-            
+
             for (int i = -1; i <= 1; i++)
             {
                 GameObject newProjectile = Instantiate(projectilePrefab,
                     transform.position, Quaternion.identity);
                 Projectile projectile = newProjectile.GetComponent<Projectile>();
 
-                
+
                 if (target != null)
                 {
-                    Vector3 directionToPlayer = (target.position - transform.position).normalized;
+                    Vector3 directionToPlayer = (target.position -transform.position).normalized;
                     Quaternion spread = Quaternion.Euler(0, i * 15, 0);
                     Vector3 finalDirection = spread * directionToPlayer;
                     projectile.Initialize(finalDirection, 15, false);

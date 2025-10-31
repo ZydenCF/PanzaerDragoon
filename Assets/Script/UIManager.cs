@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
             if (timer >= survivalTime)
             {
                 gameEnded = true;
-                ShowEndMessage("¡VICTORIA! Sobreviviste 5 minutos");
+                ShowEndMessage("¡VICTORY!");
                 Time.timeScale = 0; 
             }
         }
